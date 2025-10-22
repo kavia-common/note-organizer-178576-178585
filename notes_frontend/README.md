@@ -1,75 +1,30 @@
-# Nuxt Minimal Starter
+# Ocean Notes (Nuxt 3)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A modern Nuxt 3 notes organizer with an Ocean Professional theme. Features:
+- Sidebar with search and notes list
+- Editor with title and content
+- Create, rename, delete, duplicate
+- Keyboard shortcut: Ctrl/Cmd + N to create a note
+- LocalStorage persistence (no backend required)
+- Responsive and accessible styling
 
-## Setup
+## Development
 
-Make sure to install dependencies:
-
-```bash
-# npm
+1) Install deps
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+2) Run
 npm run dev
 
-# pnpm
-pnpm dev
+App runs on http://localhost:3000
 
-# yarn
-yarn dev
+## Structure
 
-# bun
-bun run dev
-```
+- app.vue: mounts layout and global CSS
+- layouts/default.vue: header + responsive sidebar/content
+- pages/index.vue: main editor view
+- components/: UI components (AppHeader, NotesSidebar, NotesList, NoteEditor, etc.)
+- composables/useNotes.ts: local state and persistence
+- assets/css/: design tokens and global styles
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+No environment variables are required. If introducing any, also create/update .env.example accordingly.
